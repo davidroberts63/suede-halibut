@@ -18,6 +18,9 @@ router.use(function(req, res, next) {
 	console.log("Incoming: %s %s", req.method, req.url);
 	next();
 });
+router.get("/", function(req, res) {
+	res.send("Ready when you are");
+});
 
 router.get("/pr-build-completion/:project/:pull/:build", function(req, res) {
 	console.log("Build completion: %s pr# %s build# %s", req.params.project, req.params.pull, req.params.build);
@@ -44,8 +47,8 @@ router.get("/pr-build-completion/:project/:pull/:build", function(req, res) {
 
 app.use("/", router);
 
-var port = 8080;
-var ipaddress = "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
 var server = app.listen(port, ipaddress, function() {
 	console.log('%s: Node server started on %s:%d ...',
