@@ -47,7 +47,7 @@ router.get("/pr-build-completion/:project/:pull/:build", function(req, res) {
 
 app.use("/", router);
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || process.env["PORT"] || 9876;
+var port = process.env.OPENSHIFT_NODEJS_PORT || process.env["PORT"] || 8080;
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
 console.log("Preparing to listen on %s:%d", ipaddress, port);
