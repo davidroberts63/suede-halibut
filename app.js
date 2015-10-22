@@ -51,7 +51,7 @@ var port = process.env.OPENSHIFT_NODEJS_PORT || process.env["PORT"] || 9876;
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
 console.log("Preparing to listen on %s:%d", ipaddress, port);
-var server = app.listen(port, ipaddress, function() {
+var server = app.listen(port, function() {
 	console.log('%s: Node server started on %s:%d ...',
 							Date(Date.now() ), ipaddress, port);
 });
