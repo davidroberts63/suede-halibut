@@ -19,7 +19,7 @@
     "url": "https://github.com/openshift/origin-server"
   },
   "engines": {
-    "node": ">= 4.0.0",
+    "node": ">= 4.1.2",
     "npm": ">= 1.0.0"
   },
   "dependencies": {
