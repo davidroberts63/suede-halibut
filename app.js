@@ -48,9 +48,9 @@ router.get("/pr-build-completion/:project/:pull/:build", function(req, res) {
 
 router.post("/pr-build-completion", bodyParser.json(), function(req, res) {
 	console.log("POST build completion");
-	var project = req.body.reponame;
-	var build = req.body.build_num;
-	var pull = req.body.pull_request_urls[0];
+	var project = req.body.payload.reponame;
+	var build = req.body.payload.build_num;
+	var pull = req.body.payload.pull_request_urls[0];
 	pull = pull.substring(pull.lastIndexOf("/") + 1);
 	console.log("--for build %s of pull %s in the %s project", build, pull, project);
 
