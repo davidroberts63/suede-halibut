@@ -1,22 +1,19 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "Suede-Halibut",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "Posts website screenshots to github pr",
   "keywords": [
-    "OpenShift",
     "Node.js",
-    "application",
-    "openshift"
+    "application"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "David Roberts",
+    "email": "david@teapotcoder.com",
+    "url": "http://www.teapotcoder.com/"
   },
-  "homepage": "http://www.openshift.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": "https://github.com/davidroberts63/suede-halibut"
   },
   "engines": {
     "node": ">= 4.1.2",
@@ -30,7 +27,6 @@
   },
   "devDependencies": {},
   "bundleDependencies": [],
-  "private": true,
   "main": "app.js",
   "scripts": {
     "start": "node app.js"

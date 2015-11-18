@@ -1,3 +1,3 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+#Suede Halibut
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+A small Node.js server app for taking screenshots from a continuous integration process and posting them to the associated github PR as a comment.
