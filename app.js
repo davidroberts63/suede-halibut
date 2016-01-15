@@ -25,11 +25,12 @@ router.get("/", function(req, res) {
 
 router.post("/pr-build-completion", bodyParser.json(), function(req, res) {
 	console.log("POST build completion");
+	var username = req.body.payload.username;
 	var project = req.body.payload.reponame;
 	var build = req.body.payload.build_num;
 	var pull = req.body.payload.pull_request_urls[0];
 	pull = pull.substring(pull.lastIndexOf("/") + 1);
-	console.log("--for build %s of pull %s in the %s project", build, pull, project);
+	console.log("--for build %s of pull %s in the %s project for %s", build, pull, project, username);
 
 	var url = "https://circleci.com/api/v1/project/" + settings.circleCiAccount + "/" + project + "/" + build + "/artifacts?circle-token=" + settings.circleCiToken;
 
