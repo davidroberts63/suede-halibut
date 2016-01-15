@@ -32,7 +32,9 @@ router.post("/pr-build-completion", bodyParser.json(), function(req, res) {
 	pull = pull.substring(pull.lastIndexOf("/") + 1);
 	console.log("--for build %s of pull %s in the %s project for %s", build, pull, project, username);
 
-	var url = "https://circleci.com/api/v1/project/" + settings.circleCiAccount + "/" + project + "/" + build + "/artifacts?circle-token=" + settings.circleCiToken;
+	var url = "https://circleci.com/api/v1/project/" + username + "/" + project + "/" + build + "/artifacts";
+	console.log("Requesting artifacts from %s", url);
+	url = url + "?circle-token=" + settings.circleCiToken;
 
 	request({url: url, headers: { "Accept": "application/json"} }, function(err, response, body) {
 		console.log("Retrieved the artifacts payload");
