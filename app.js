@@ -1,6 +1,7 @@
 var request = require("request");
 var poster = require("./postissue");
 
+var util = require("util");
 var bodyParser = require("body-parser");
 var express = require("express");
 var app = express();
@@ -55,7 +56,7 @@ app.use("/", router);
 
 var port = process.env["PORT"] || 8080;
 
-console.log("Preparing to listen on %s:%d", ipaddress, port);
+console.log("Preparing to listen on %d", port);
 var server = app.listen(port, function() {
 	console.log('%s: Node server started on port %d ...',
 							Date(Date.now() ), port);
