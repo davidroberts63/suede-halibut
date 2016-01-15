@@ -34,6 +34,8 @@ router.post("/pr-build-completion", bodyParser.json(), function(req, res) {
 
 	request({url: url, headers: { "Accept": "application/json"} }, function(err, response, body) {
 		console.log("Retrieved the artifacts payload");
+		console.log("Payload: " + body);
+
 		var payload = JSON.parse(body);
 		var screenshots = payload.map(theUrl).filter(forImages);
 		console.log(screenshots);
