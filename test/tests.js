@@ -46,7 +46,7 @@ describe("Valid requests to pr-build-completion", function() {
     });
     
     it("returns completum body in response", function(done) {
-        expect(response).to.have.property("completum", "yes");
+        expect(response.body).to.have.property("completum", "yes");
         done(); 
     });
     
